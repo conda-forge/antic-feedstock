@@ -11,7 +11,7 @@ source:
     - 0001-Fix-testing-on-macOS.patch
 
 build:
-  number: 0
+  number: 1
   skip: true        # [win]
   run_exports:
     - {{ pin_subpackage('antic', max_pin='x.x') }}
