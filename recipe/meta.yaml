@@ -1,18 +1,18 @@
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: antic
   version: {{ version }}
 
 source:
-  url: https://github.com/wbhart/antic/archive/v{{ version }}.tar.gz
-  sha256: b44dfcaa93db9e9a9fb3e47ce861e9e74de6d53e53754dd821b80b3e02e27607
+  url: https://github.com/wbhart/antic/archive/{{ version }}.tar.gz
+  sha256: 9e8d518fc9b27807d5bfd173cc81d779a6a1e07ae37bc59427c5223283e9e4d4
   patches:
     - 0001-Fix-testing-on-macOS.patch
 
 build:
-  number: 1
-  skip: true        # [win]
+  number: 0
+  skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('antic', max_pin='x.x') }}
 
@@ -35,7 +35,7 @@ about:
   home: https://github.com/wbhart/antic
   license: LGPL-2.1-or-later
   license_file: LICENSE
-  summary: 'Algebraic Number Theory In C'
+  summary: Algebraic Number Theory In C
 
 extra:
   recipe-maintainers:
