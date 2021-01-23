@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/wbhart/antic/archive/v{{ version }}.tar.gz
   sha256: 78a06f67352d7a94905a5399ef0f0add1a34e90fb0c30b8dbdedf8254393e9dd
-#   patches:
-#     - 0001-Fix-testing-on-macOS.patch
 
 build:
   number: 0
@@ -21,7 +19,7 @@ requirements:
     - {{ compiler('c') }}
     - make
   host:
-    - libflint
+    - libflint >=2.7
     - gmp
     - mpfr
 
