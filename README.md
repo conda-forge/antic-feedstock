@@ -5,11 +5,9 @@ Home: https://github.com/wbhart/antic
 
 Package license: LGPL-2.1-or-later
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/antic-feedstock/blob/master/LICENSE.txt)
 
 Summary: Algebraic Number Theory In C
-
-
 
 Current build status
 ====================
