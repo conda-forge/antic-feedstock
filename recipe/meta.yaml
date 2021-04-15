@@ -1,4 +1,4 @@
-{% set version = "0.2.3" %}
+{% set version = "0.2.4" %}
 
 package:
   name: antic
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/wbhart/antic/archive/v{{ version }}.tar.gz
-  sha256: 78a06f67352d7a94905a5399ef0f0add1a34e90fb0c30b8dbdedf8254393e9dd
+  sha256: 517d53633ff9c6348549dc6968567051b2161098d2bc395cb40ecc41e24312c6
 
 build:
   number: 0
