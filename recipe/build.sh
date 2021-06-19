@@ -8,4 +8,6 @@ export CFLAGS="$CFLAGS -funroll-loops -g -Wno-unknown-pragmas"
 ./configure --prefix=$PREFIX --with-gmp=$PREFIX --with-mpfr=$PREFIX --with-flint=$PREFIX --disable-static
 make -j${CPU_COUNT}
 make install
-make check -j${CPU_COUNT}
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+make check -j${CPU_COUNT} || (cat test-suite.log; false)
+fi
