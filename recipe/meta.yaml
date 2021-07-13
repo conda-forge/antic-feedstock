@@ -9,18 +9,19 @@ source:
   sha256: 517d53633ff9c6348549dc6968567051b2161098d2bc395cb40ecc41e24312c6
 
 build:
-  number: 1
-  skip: true  # [win]
+  number: 2
   run_exports:
     - {{ pin_subpackage('antic', max_pin='x.x') }}
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - make
+    - autotools_clang_conda  # [win]
+    - make  # [not win]
   host:
     - libflint >=2.7
-    - gmp
+    - gmp  # [not win]
+    - mpir  # [win]
     - mpfr
 
 test:
