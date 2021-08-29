@@ -8,7 +8,7 @@ source:
   url: https://github.com/wbhart/antic/archive/v{{ version }}.tar.gz
   sha256: 517d53633ff9c6348549dc6968567051b2161098d2bc395cb40ecc41e24312c6
   patches:
-    - 0001-cmakelists.patch
+    - 0001-cmakelists.patch  # [win]
 
 build:
   number: 2
