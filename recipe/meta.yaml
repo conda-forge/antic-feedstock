@@ -8,18 +8,20 @@ source:
   url: https://github.com/wbhart/antic/archive/v{{ version }}.tar.gz
   sha256: 517d53633ff9c6348549dc6968567051b2161098d2bc395cb40ecc41e24312c6
   patches:
-    - 0001-no-r.patch
+    - 0001-cmakelists.patch
 
 build:
   number: 2
+  skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage('antic', max_pin='x.x') }}
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - autotools_clang_conda  # [win]
     - make  # [not win]
+    - cmake  # [win]
+    - ninja  # [win]
   host:
     - libflint >=2.7
     - gmp  # [not win]
@@ -28,9 +30,12 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/include/antic/nf.h      # [unix]
-    - test -f $PREFIX/lib/libantic.so         # [linux]
-    - test -f $PREFIX/lib/libantic.dylib      # [osx]
+    - test -f $PREFIX/include/antic/nf.h             # [unix]
+    - test -f $PREFIX/lib/libantic.so                # [linux]
+    - test -f $PREFIX/lib/libantic.dylib             # [osx]
+    - if not exist %LIBRARY_INC%\antic\nf.h exit 1   # [win]
+    - if not exist %LIBRARY_LIB%\antic.lib exit 1    # [win]
+    - if not exist %LIBRARY_BIN%\antic-0.dll exit 1  # [win]
 
 about:
   home: https://github.com/wbhart/antic
