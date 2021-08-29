@@ -1,3 +1,5 @@
+copy %RECIPE_DIR%\CMakeLists.txt %SRC_DIR%\CMakeLists.txt
+
 mkdir build
 cd build
 
