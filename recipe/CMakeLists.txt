@@ -135,7 +135,7 @@ foreach (FOLDER ${FOLDERS})
     set(HEADERS ${HEADERS} ${FOLDER}.h)
 endforeach ()
 
-install(FILES ${HEADERS} DESTINATION include)
+install(FILES ${HEADERS} DESTINATION include/antic)
 
 if (BUILD_TESTING)
     enable_testing()
