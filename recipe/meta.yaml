@@ -23,7 +23,7 @@ requirements:
     - cmake  # [win]
     - ninja  # [win]
   host:
-    - libflint >=2.7
+    - libflint
     - gmp  # [not win]
     - mpir  # [win]
     - mpfr
