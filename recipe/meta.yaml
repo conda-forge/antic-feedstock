@@ -11,7 +11,7 @@ source:
     - 0001-set-dllexport-dllimport-when-building-for-Windows.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage('antic', max_pin='x.x') }}
@@ -23,7 +23,7 @@ requirements:
     - cmake  # [win]
     - ninja  # [win]
   host:
-    - libflint >=2.7
+    - libflint
     - gmp  # [not win]
     - mpir  # [win]
     - mpfr
