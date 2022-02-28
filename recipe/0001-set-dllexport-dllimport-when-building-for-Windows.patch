@@ -16,8 +16,8 @@ index e250aad7..28ea6e08 100644
                           __ANTIC_VERSION_MINOR * 100 + \
                           __ANTIC_VERSION_PATCHLEVEL)
  
-+// Visibility Macros to separate API from non-API and inline template code.
-+// See, https://gcc.gnu.org/wiki/Visibility.
++/* Visibility Macros to separate API from non-API and inline template code. */
++/* See, https://gcc.gnu.org/wiki/Visibility. */
 +#if defined _WIN32 || defined __CYGWIN__
 +#ifdef ANTIC_BUILD_DLL
 +#define ANTIC_DLL __declspec(dllexport)
