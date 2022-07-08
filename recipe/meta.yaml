@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/wbhart/antic/archive/v{{ version }}.tar.gz
   sha256: 7b236b6226d5730cf66d492f1562c34d4dcf1bdc8775fec2330f560332ab05c1
-  patches:
-    - 0001-set-dllexport-dllimport-when-building-for-Windows.patch
 
 build:
   number: 0
