@@ -9,10 +9,13 @@ source:
   sha256: 7b236b6226d5730cf66d492f1562c34d4dcf1bdc8775fec2330f560332ab05c1
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14]
   run_exports:
-    - {{ pin_subpackage('antic', max_pin='x.x') }}
+    - {{ pin_subpackage('antic', max_pin='x.x') }}    # [not osx]
+    # On macOS, the library is called libantic-0.2.5.dylib, so we have to pin
+    # exactly, see https://github.com/wbhart/antic/issues/80
+    - {{ pin_subpackage('antic', max_pin='x.x.x') }}  # [osx]
 
 requirements:
   build:
