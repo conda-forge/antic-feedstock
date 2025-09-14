@@ -21,9 +21,9 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
-    - make  # [not win]
-    - cmake  # [win]
-    - ninja  # [win]
+    - make    # [not win]
+    - cmake 3 # [win]
+    - ninja   # [win]
   host:
     # ANTIC development has stopped since it is now part of arb. It does not
     # and will never support FLINT 3.x. So we pin the version here against the pinning feedstock.
