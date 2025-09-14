@@ -25,7 +25,9 @@ requirements:
     - cmake  # [win]
     - ninja  # [win]
   host:
-    - libflint
+    # ANTIC development has stopped since it is now part of arb. It does not
+    # and will never support FLINT 3.x. So we pin the version here against the pinning feedstock.
+    - libflint 2.9
     - gmp  # [not win]
     - mpir  # [win]
     - mpfr
