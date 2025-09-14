@@ -9,7 +9,7 @@ source:
   sha256: 7b236b6226d5730cf66d492f1562c34d4dcf1bdc8775fec2330f560332ab05c1
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage('antic', max_pin='x.x') }}    # [not osx]
@@ -20,11 +20,14 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - make  # [not win]
-    - cmake  # [win]
-    - ninja  # [win]
+    - {{ stdlib("c") }}
+    - make     # [not win]
+    - cmake 3  # [win]
+    - ninja    # [win]
   host:
-    - libflint
+    # ANTIC development has stopped since it is now part of arb. It does not
+    # and will never support FLINT 3.x. So we pin the version here against the pinning feedstock.
+    - libflint 2.9
     - gmp  # [not win]
     - mpir  # [win]
     - mpfr
