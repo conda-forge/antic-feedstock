@@ -18,8 +18,6 @@ channel_targets:
 - conda-forge main
 gmp:
 - '6'
-libflint:
-- '3.3'
 macos_machine:
 - arm64-apple-darwin20.0.0
 mpfr:

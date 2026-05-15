@@ -8,8 +8,6 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-libflint:
-- '3.3'
 mpfr:
 - '4'
 target_platform:
